@@ -34,10 +34,13 @@ public class Main {
         try {
 
             int dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK); //starter med søndag = 1
-            mailTxt.append("dayOfWeek=" + dayOfWeek + "<br>\n");
+            mailTxt.append("dayOfWeek=" + dayOfWeek + "<br>\n<br>\n<br>\n");
 
             Double rainSumHoursOfInterest =
                 getRainSumHoursOfInterest(getYrDataXml("https://www.yr.no/place/Denmark/North_Jutland/Aalborg/forecast_hour_by_hour.xml"));
+
+            mailTxt.append("<br>\n<br>\n<br>\n");
+
 
             if (dayOfWeek == 6 || dayOfWeek == 7) { //ikke fredag eller lørdag
                 mailTxt.append("dude, it is weekend, dont go to work tomorrow! RainSum=" + rainSumHoursOfInterest + "<br>\n");

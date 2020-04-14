@@ -27,6 +27,7 @@ public class MailClient {
                 subject = "YrBike: TAKE THE BIKE dude :)";
             } else {
                 subject = "YrBike: no need to bicycle to work today dude";
+                return mailTxt;
             }
 
             mailTxt.append("Welcome to MailClient.generateAndSendEmail()<br>\n");
@@ -42,7 +43,7 @@ public class MailClient {
 
             generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("allan.noergaard.skov@gmail.com"));
             generateMailMessage.setSubject(subject);
-            generateMailMessage.setContent(mailTxt + "<br>\n<br>\nhttps://www.yr.no/place/Denmark/North_Jutland/Aalborg/", "text/html");
+            generateMailMessage.setContent(mailTxt + "<br>\n<br>\nhttps://www.yr.no/place/Denmark/North_Jutland/Aalborg/hour_by_hour.html", "text/html");
 
             Transport transport = getMailSession.getTransport("smtp");
 
